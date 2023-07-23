@@ -6,9 +6,9 @@ from PySide6.QtGui import *
 from PySide6.QtCore import *
 from PySide6.QtUiTools import QUiLoader
 from mytime import MyTime
-from stopwatchthread import StopWatchThread
-from timerthread import TimerThread
-from worldclock import WorldClockThread
+from thread_stopwatch import StopWatchThread
+from thread_timer import TimerThread
+from thread_worldclock import WorldClockThread
 from thread_alarm import AlarmThread
 from main_window import Ui_MainWindow
 from plyer.utils import platform
@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
     def read_from_database(self):
         alarm = self.db.get_alarms()
         self.alarm_lb = []
-        for row in range(len(alarms)):
+        for row in range(len(alarm)):
             self.add_alarm_to_grid(alarm, row)
 
     def add_alarm(self):
@@ -86,11 +86,11 @@ class MainWindow(QMainWindow):
         new_label = QLabel()
         new_btn = QPushButton()
         new_btn_edit = QPushButton()
-        new_time = MyTime.convert_second_to_time(alarms[row][1])
+        new_time = MyTime.convert_second_to_time(alarm[row][1])
         self.thread_alarm.Time_Alarms.append(new_time)
         new_label.setText(
             f"{new_time.hour}:{new_time.minute}:{new_time.second}")
-        new_label.setText(QFont("Centaur", pointSize=15))
+        new_label.setFont(QFont("Centaur", pointSize=15))
         new_btn_edit.setText("📝")
         new_btn.setText("❌")
         new_btn.setMaximumWidth(50)
@@ -103,8 +103,8 @@ class MainWindow(QMainWindow):
         self.ui.gl_alarms.addWidget(new_btn, row, 2)
 
         new_btn_edit.clicked.connect(
-            partial(self.edit_alarms, row, alarms[row][0]))
-        new_btn.clicked.connect(partial(self.remove_alarm, alarms[row][0]))
+            partial(self.edit_alarm, row, alarm[row][0]))
+        new_btn.clicked.connect(partial(self.remove_alarm, alarm[row][0]))
 
     def edit_alarm(self, row, id):
         if self.editable:
@@ -133,22 +133,22 @@ class MainWindow(QMainWindow):
                 if child:
                     children.append(child)
             for child in children:
-                child.delete_later()
+                child.deleteLater()
             self.read_from_database()
 
     def show_world_clock(self):
-        self.thread_world_clock.timeBerline = self.thread_world_clock.timeTehran.sub(
+        self.thread_world_clock.timeBerlin = self.thread_world_clock.timeTehran.sub(
             MyTime(2, 30, 0))
         self.thread_world_clock.timeWashington = self.thread_world_clock.timeTehran.sub(
             MyTime(7, 30, 0))
         self.ui.lb_tehran.setText(
-            f"{self.thread_WorldClock.timeTehran.hour}:{self.thread_WorldClock.timeTehran.minute}:{self.thread_WorldClock.timeTehran.second}")
+            f"{self.thread_world_clock.timeTehran.hour}:{self.thread_world_clock.timeTehran.minute}:{self.thread_world_clock.timeTehran.second}")
         self.ui.lb_berlin.setText(
-            f"{self.thread_WorldClock.timeBerlin.hour}:{self.thread_WorldClock.timeBerlin.minute}:{self.thread_WorldClock.timeBerlin.second}")
+            f"{self.thread_world_clock.timeBerlin.hour}:{self.thread_world_clock.timeBerlin.minute}:{self.thread_world_clock.timeBerlin.second}")
         self.ui.lb_washington.setText(
-            f"{self.thread_WorldClock.timeWashington.hour}:{self.thread_WorldClock.timeWashington.minute}:{self.thread_WorldClock.timeWashington.second}")
+            f"{self.thread_world_clock.timeWashington.hour}:{self.thread_world_clock.timeWashington.minute}:{self.thread_world_clock.timeWashington.second}")
 
-    @Slot
+    # @Slot
     def start_stopwatch(self):
         self.thread_stopwatch.start()
 
