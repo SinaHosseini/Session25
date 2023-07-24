@@ -4,19 +4,19 @@ This is an app coding by Python and it uses "Thread" parallel processing.
 
 You can see time in **world clock**.
 
-![time](png\clock_worldclock.png)
+![time](png\clock_worldclock.png?raw=ture)
 
 ### Set alarms.
 
-![alarm](png\clock_alarm.png)
+![alarm](png\clock_alarm.png?raw=ture)
 
 ### Control time.
 
-![stopwatch](png\clock_stopwatch.png)
+![stopwatch](png\clock_stopwatch.png?raw=ture)
 
 ### Use timer.
 
-![timer](png\clock_timer.png)
+![timer](png\clock_timer.png?raw=ture)
 
 ## Create EXE file
 
