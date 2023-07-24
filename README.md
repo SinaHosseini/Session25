@@ -4,7 +4,7 @@ This is an app coding by Python and it uses "Thread" parallel processing.
 
 You can see time in **world clock**.
 
-![time](png\clock_worldclock.png?raw=ture)
+![time](https://github.com/SinaHosseini/session25/blob/51de0a03f8b39f5a0305ac1352579a2e0ba4f5c5/png/clock_worldclock.png?raw=ture)
 
 ### Set alarms.
 
@@ -12,11 +12,11 @@ You can see time in **world clock**.
 
 ### Control time.
 
-![stopwatch](png\clock_stopwatch.png?raw=ture)
+![stopwatch](https://github.com/SinaHosseini/session25/blob/51de0a03f8b39f5a0305ac1352579a2e0ba4f5c5/png/clock_stopwatch.png?raw=ture)
 
 ### Use timer.
 
-![timer](png\clock_timer.png?raw=ture)
+![timer](https://github.com/SinaHosseini/session25/blob/51de0a03f8b39f5a0305ac1352579a2e0ba4f5c5/png/clock_timer.png?raw=ture)
 
 ## Create EXE file
 
