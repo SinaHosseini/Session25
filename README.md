@@ -8,7 +8,7 @@ You can see time in **world clock**.
 
 ### Set alarms.
 
-![alarm](png\clock_alarm.png?raw=ture)
+![alarm](https://github.com/SinaHosseini/session25/blob/69d49c47f7596fe661d20b0f183110ffacd0d713/png/clock_alarm.png?raw=ture)
 
 ### Control time.
 
