@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(398, 391)
         icon = QIcon()
-        icon.addFile(u"icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../../../../Users/sina/.designer/backup/icon.png", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setIconSize(QSize(128, 128))
         self.centralwidget = QWidget(MainWindow)
@@ -91,8 +91,8 @@ class Ui_MainWindow(object):
         self.btn_add_alarm = QPushButton(self.tab_2)
         self.btn_add_alarm.setObjectName(u"btn_add_alarm")
         font1 = QFont()
-        font1.setFamilies([u"Centaur"])
-        font1.setPointSize(16)
+        font1.setFamilies([u"Gadugi"])
+        font1.setPointSize(14)
         font1.setBold(False)
         self.btn_add_alarm.setFont(font1)
 
@@ -125,8 +125,8 @@ class Ui_MainWindow(object):
         self.btn_start_stopwatch = QPushButton(self.tab_3)
         self.btn_start_stopwatch.setObjectName(u"btn_start_stopwatch")
         font4 = QFont()
-        font4.setFamilies([u"Centaur"])
-        font4.setPointSize(18)
+        font4.setFamilies([u"Gadugi"])
+        font4.setPointSize(16)
         self.btn_start_stopwatch.setFont(font4)
 
         self.gridLayout_3.addWidget(self.btn_start_stopwatch, 1, 0, 1, 1)
@@ -148,6 +148,21 @@ class Ui_MainWindow(object):
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayout_5 = QGridLayout(self.tab_4)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.btn_reset_timer = QPushButton(self.tab_4)
+        self.btn_reset_timer.setObjectName(u"btn_reset_timer")
+        font5 = QFont()
+        font5.setFamilies([u"Gadugi"])
+        font5.setPointSize(13)
+        self.btn_reset_timer.setFont(font5)
+
+        self.gridLayout_5.addWidget(self.btn_reset_timer, 1, 2, 1, 1)
+
+        self.btn_stop_timer = QPushButton(self.tab_4)
+        self.btn_stop_timer.setObjectName(u"btn_stop_timer")
+        self.btn_stop_timer.setFont(font5)
+
+        self.gridLayout_5.addWidget(self.btn_stop_timer, 1, 1, 1, 1)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.tb_hour_timer = QLineEdit(self.tab_4)
@@ -202,24 +217,9 @@ class Ui_MainWindow(object):
 
         self.btn_start_timer = QPushButton(self.tab_4)
         self.btn_start_timer.setObjectName(u"btn_start_timer")
-        font5 = QFont()
-        font5.setFamilies([u"Centaur"])
-        font5.setPointSize(15)
         self.btn_start_timer.setFont(font5)
 
         self.gridLayout_5.addWidget(self.btn_start_timer, 1, 0, 1, 1)
-
-        self.btn_stop_timer = QPushButton(self.tab_4)
-        self.btn_stop_timer.setObjectName(u"btn_stop_timer")
-        self.btn_stop_timer.setFont(font5)
-
-        self.gridLayout_5.addWidget(self.btn_stop_timer, 1, 1, 1, 1)
-
-        self.btn_reset_timer = QPushButton(self.tab_4)
-        self.btn_reset_timer.setObjectName(u"btn_reset_timer")
-        self.btn_reset_timer.setFont(font5)
-
-        self.gridLayout_5.addWidget(self.btn_reset_timer, 1, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab_4, "")
 
@@ -236,7 +236,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -259,14 +259,14 @@ class Ui_MainWindow(object):
         self.btn_stop_stopwatch.setText(QCoreApplication.translate("MainWindow", u"stop", None))
         self.btn_reset_stopwatch.setText(QCoreApplication.translate("MainWindow", u"rest", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Stopwatch", None))
+        self.btn_reset_timer.setText(QCoreApplication.translate("MainWindow", u"rest", None))
+        self.btn_stop_timer.setText(QCoreApplication.translate("MainWindow", u"stop", None))
         self.tb_hour_timer.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u":", None))
         self.tb_minute_timer.setText(QCoreApplication.translate("MainWindow", u"15", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u":", None))
         self.tb_second_timer.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.btn_start_timer.setText(QCoreApplication.translate("MainWindow", u"start", None))
-        self.btn_stop_timer.setText(QCoreApplication.translate("MainWindow", u"stop", None))
-        self.btn_reset_timer.setText(QCoreApplication.translate("MainWindow", u"rest", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Timer", None))
     # retranslateUi
 
